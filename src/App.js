@@ -1,4 +1,6 @@
+import { Provider } from "react-redux";
 import Counter from "./components/Counter";
+import store from "./redux/store";
 
 function App() {
   return (
@@ -8,7 +10,9 @@ function App() {
       </h1>
 
       <div className='max-w-md mx-auto mt-10 space-y-5'>
-        <Counter />
+        <Provider store={store}>
+          <Counter />
+        </Provider>
       </div>
     </div>
   );
