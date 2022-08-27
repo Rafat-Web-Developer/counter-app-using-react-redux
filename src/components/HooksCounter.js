@@ -5,12 +5,12 @@ const HooksCounter = () => {
   const count = useSelector((state) => state.value);
   const dispatch = useDispatch();
 
-  const incrementHandler = (value) => {
-    dispatch(increment(value));
+  const incrementHandler = () => {
+    dispatch(increment());
   };
 
-  const decrementHandler = (value) => {
-    dispatch(decrement(value));
+  const decrementHandler = () => {
+    dispatch(decrement());
   };
 
   return (
@@ -19,12 +19,12 @@ const HooksCounter = () => {
       <div className='flex space-x-3'>
         <button
           className='bg-indigo-400 text-white px-3 py-2 rounded shadow'
-          onClick={() => incrementHandler(5)}>
+          onClick={incrementHandler}>
           Increment
         </button>
         <button
           className='bg-red-400 text-white px-3 py-2 rounded shadow'
-          onClick={() => decrementHandler(5)}>
+          onClick={decrementHandler}>
           Decrement
         </button>
       </div>

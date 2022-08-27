@@ -8,12 +8,12 @@ const Counter = ({ count, increment, decrement }) => {
       <div className='flex space-x-3'>
         <button
           className='bg-indigo-400 text-white px-3 py-2 rounded shadow'
-          onClick={() => increment(5)}>
+          onClick={increment}>
           Increment
         </button>
         <button
           className='bg-red-400 text-white px-3 py-2 rounded shadow'
-          onClick={() => decrement(5)}>
+          onClick={decrement}>
           Decrement
         </button>
       </div>
@@ -29,8 +29,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    increment: (value) => dispatch(increment(value)),
-    decrement: (value) => dispatch(decrement(value)),
+    increment: () => dispatch(increment()),
+    decrement: () => dispatch(decrement()),
   };
 };
 
